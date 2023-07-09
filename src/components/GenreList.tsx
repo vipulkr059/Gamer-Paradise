@@ -12,9 +12,10 @@ import getCroppedImage from "../services/image-url";
 
 interface Props {
   onSelectedGenre: (genre: Genre) => void;
+  selectedGenre: Genre | null;
 }
 
-export const GenreList = ({ onSelectedGenre }: Props) => {
+export const GenreList = ({ selectedGenre, onSelectedGenre }: Props) => {
   const { data, isLoading, error } = useGenre();
   if (error) return null;
   if (isLoading) return <Spinner />;
@@ -31,6 +32,7 @@ export const GenreList = ({ onSelectedGenre }: Props) => {
             <Button
               variant="link"
               fontSize={"lg"}
+              fontWeight={genre.id === selectedGenre?.id ? "bold" : "normal"}
               onClick={() => onSelectedGenre(genre)}
             >
               {genre.name}
