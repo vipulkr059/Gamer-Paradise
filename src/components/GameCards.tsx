@@ -5,6 +5,7 @@ import { PlatformList } from "./PlatformList";
 import { CriticScore } from "./CriticScore";
 import getCroppedImage from "../services/image-url";
 import Emoji from "./Emoji";
+import { Link } from "react-router-dom";
 
 interface Props {
   game: Game;
@@ -22,7 +23,7 @@ export const GameCards = ({ game }: Props) => {
           <CriticScore score={game.metacritic} />
         </HStack>
         <Heading fontSize={"2xl"}>
-          {game.name}
+          <Link to={"/games/" + game.slug}>{game.name}</Link>
           <Emoji rating={game.rating_top} />
         </Heading>
       </CardBody>
