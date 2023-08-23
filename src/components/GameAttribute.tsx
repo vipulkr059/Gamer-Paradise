@@ -1,6 +1,6 @@
 import React from "react";
 import DefinitionItem from "./DefinitionItem";
-import { Game } from "../entities/Game";
+import Game from "../entities/Game";
 import { Box, SimpleGrid, Text } from "@chakra-ui/react";
 import { CriticScore } from "./CriticScore";
 
