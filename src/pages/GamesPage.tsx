@@ -23,8 +23,8 @@ export const GamesPage = () => {
         <GameAttribute game={game}></GameAttribute>
       </GridItem>
       <GridItem>
-        {/* <GameTrailer gameId={game.id} /> */}
-        {/* <Screenshots gameId={game.id} /> */}
+        <GameTrailer gameId={game.id} />
+        <Screenshots gameId={game.id} />
       </GridItem>
     </SimpleGrid>
   );
